@@ -1,0 +1,156 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Modern Family Villa",
+      "segment_name": "Luxury Homes",
+      "description": "A beautiful modern villa with spacious living areas, lush gardens, and a private swimming pool.",
+      "price": "$850,000",
+      "status": "sale",
+      "area": "3,500 sq ft",
+      "location": "Beverly Hills, CA",
+      "facilities": ["Living Room", "Swimming Pool", "Kitchen", "Garden", "Garage"],
+      "card_image": "https://i.ibb.co/z5wB65h/card-img-1.jpg",
+      "view_property": [
+        "https://i.ibb.co.com/HgJYNRb/modern-family-villa-1.jpg",
+        "https://i.ibb.co.com/QvV5CKP/modern-family-villa-2.jpg",
+        "https://i.ibb.co.com/T2SBhgH/modern-family-villa-3.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "estate_title": "Cozy Apartment",
+      "segment_name": "City Living",
+      "description": "A cozy 2-bedroom apartment in the heart of the city, perfect for urban living.",
+      "price": "$2,500/month",
+      "status": "rent",
+      "area": "1,200 sq ft",
+      "location": "Manhattan, NY",
+      "facilities": ["Living Room", "Kitchen", "Balcony", "Gym Access"],
+      "card_image": "https://i.ibb.co/XYT9dxt/card-img-2.jpg",
+      "view_property": [
+        "https://i.ibb.co.com/cJv2Dzj/cozy-apartment-1.jpg",
+        "https://i.ibb.co.com/YdXQLYY/cozy-apartment-2.jpg",
+        "https://i.ibb.co.com/qssQf4V/cozy-apartment-3.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "estate_title": "Spacious Country House",
+      "segment_name": "Rural Retreats",
+      "description": "A serene country house surrounded by nature, with a large backyard and modern amenities.",
+      "price": "$600,000",
+      "status": "sale",
+      "area": "4,000 sq ft",
+      "location": "Nashville, TN",
+      "facilities": ["Living Room", "Kitchen", "Swimming Pool", "Garden", "Fireplace"],
+      "card_image": "https://i.ibb.co/VpX6Sym/card-img-3.jpg",
+      "view_property": [
+        "https://i.ibb.co.com/z735KYQ/spacious-house-1.jpg",
+        "https://i.ibb.co.com/DK7VL5V/spacious-house-2.jpg",
+        "https://i.ibb.co.com/MhkyKxQ/spacious-house-3.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "estate_title": "Penthouse Suite",
+      "segment_name": "High-Rise Living",
+      "description": "A luxurious penthouse suite with stunning city views, modern interiors, and exclusive amenities.",
+      "price": "$1,200,000",
+      "status": "sale",
+      "area": "2,800 sq ft",
+      "location": "Downtown Miami, FL",
+      "facilities": ["Living Room", "Kitchen", "Private Terrace", "Swimming Pool", "Gym"],
+      "card_image": "https://i.ibb.co/NxSYxs6/card-img-4.jpg",
+      "view_property": [
+        "https://i.ibb.co.com/j6xmmWv/penthouse-1.jpg",
+        "https://i.ibb.co.com/rkyQ8X5/penthouse-2.jpg",
+        "https://i.ibb.co.com/2gB642f/penthouse-3.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "estate_title": "Suburban Family Home",
+      "segment_name": "Family-Friendly",
+      "description": "A charming home in a quiet neighborhood, ideal for families. Close to schools and parks.",
+      "price": "$450,000",
+      "status": "sale",
+      "area": "2,200 sq ft",
+      "location": "Austin, TX",
+      "facilities": ["Living Room", "Kitchen", "Garage", "Backyard"],
+      "card_image": "https://i.ibb.co/0XkYdpc/card-img-5.jpg",
+      "view_property": [
+        "https://i.ibb.co.com/cQB3vnf/suburban-home-1.jpg",
+        "https://i.ibb.co.com/qBcGTWs/suburban-home-2.jpg",
+        "https://i.ibb.co.com/njY7q6J/suburban-home-3.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "estate_title": "Beachside Bungalow",
+      "segment_name": "Vacation Homes",
+      "description": "A cozy beachside bungalow with direct ocean views and private access to the beach.",
+      "price": "$750,000",
+      "status": "sale",
+      "area": "1,800 sq ft",
+      "location": "Malibu, CA",
+      "facilities": ["Living Room", "Kitchen", "Private Beach Access", "Deck"],
+      "card_image": "https://i.ibb.co/10b9vyN/card-img-6.jpg",
+      "view_property": [
+        "https://i.ibb.co.com/LSd6RdJ/beachside-bunglow-1.jpg",
+        "https://i.ibb.co.com/42L7fj2/beachside-bunglow-2.jpg",
+        "https://i.ibb.co.com/18HDYMD/beachside-bunglow-3.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "estate_title": "Luxury Townhouse",
+      "segment_name": "Urban Elegance",
+      "description": "A stylish townhouse with modern interiors, located in a vibrant urban neighborhood.",
+      "price": "$3,000/month",
+      "status": "rent",
+      "area": "2,000 sq ft",
+      "location": "Brooklyn, NY",
+      "facilities": ["Living Room", "Kitchen", "Balcony", "Gym Access"],
+      "card_image": "https://i.ibb.co/Z2ZnJm2/card-img-7.jpg",
+      "view_property": [
+        "https://i.ibb.co.com/BNVCwQ9/luxury-town-house-1.jpg",
+        "https://i.ibb.co.com/GVpWTXM/luxury-town-house-2.jpg",
+        "https://i.ibb.co.com/tPH039b/luxury-town-house-3.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "estate_title": "Mountain Cabin",
+      "segment_name": "Nature Escapes",
+      "description": "A secluded mountain cabin with panoramic views and modern amenities for a peaceful retreat.",
+      "price": "$500,000",
+      "status": "sale",
+      "area": "1,600 sq ft",
+      "location": "Aspen, CO",
+      "facilities": ["Living Room", "Kitchen", "Fireplace", "Deck", "Hot Tub"],
+      "card_image": "https://i.ibb.co/S0zQGMW/card-img-8.jpg",
+      "view_property": [
+        "https://i.ibb.co.com/LNpCxms/mountain-cabin-1.jpg",
+        "https://i.ibb.co.com/Q8WwQPT/mountain-cabin-2.jpg",
+        "https://i.ibb.co.com/7YKN2Lz/mountain-cabin-3.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "estate_title": "Eco-Friendly Home",
+      "segment_name": "Sustainable Living",
+      "description": "An eco-friendly home with solar panels, rainwater harvesting, and energy-efficient appliances.",
+      "price": "$900,000",
+      "status": "sale",
+      "area": "2,500 sq ft",
+      "location": "Portland, OR",
+      "facilities": ["Living Room", "Kitchen", "Solar Panels", "Garden"],
+      "card_image": "https://i.ibb.co/YdJNCkT/card-img-9.jpg",
+      "view_property": [
+        "https://i.ibb.co.com/Yd94Twn/eco-friendly-1.jpg",
+        "https://i.ibb.co.com/5cZkpyn/eco-friendly-2.jpg",
+        "https://i.ibb.co.com/KFdcptv/eco-friendly-3.jpg"
+      ]
+    }
+  ]
+  

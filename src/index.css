@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#root{
+    max-width: 100%!important;
+    margin: 0!important;
+    padding: 0px!important;
+}
+
+
+.css-12pwiy3-MuiContainer-root{
+    padding: 0!important;
+}
