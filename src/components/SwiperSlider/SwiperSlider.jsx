@@ -49,8 +49,8 @@ export default function SwiperSlider() {
           <SwiperSlide key={estate.id} className="w-full h-full">
             <div className="slide-content relative">
               <img src={estate.image} alt={estate.title} className="w-full h-auto" />
-              <div className="overlay absolute top-10 md:top-[45%]  left-0 right-0 m-auto bg-black w-1/2 py-5 bg-opacity-50 ">
-                <h3 className="estate-title text-[#FF0000] text-4xl z-10 font-bold">{estate.title}</h3>
+              <div className="overlay absolute top-16 md:top-[45%]  left-0 right-0 m-auto bg-black w-48 md:w-1/2 py-5 bg-opacity-30 ">
+                <h3 className="estate-title text-white text-xl md:text-4xl z-10 font-bold">{estate.title}</h3>
               </div>
             </div>
           </SwiperSlide>

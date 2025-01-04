@@ -8,7 +8,7 @@ const Root = () => {
     <Container maxWidth={false}>
       <ComplexNavbar></ComplexNavbar>
       <Outlet></Outlet>
-        <Footer></Footer>
+      <Footer></Footer>
     </Container>
   );
 };

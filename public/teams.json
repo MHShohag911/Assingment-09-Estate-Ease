@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "name": "Sophia Martinez",
+      "designation": "Managing Director",
+      "photoUrl": "https://i.ibb.co.com/v4RMtGb/team-people-1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Olivia Johnson",
+      "designation": "Real Estate Agent",
+      "photoUrl": "https://i.ibb.co.com/6svf3Dn/team-people-5.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Emma Brown",
+      "designation": "Marketing Specialist",
+      "photoUrl": "https://i.ibb.co.com/KjwZYyt/team-people-6.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Isabella Davis",
+      "designation": "Client Relationship Manager",
+      "photoUrl": "https://i.ibb.co.com/FxSy5Cv/team-people-7.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Ava Wilson",
+      "designation": "Finance Manager",
+      "photoUrl": "https://i.ibb.co.com/wCnT73C/team-people-8.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Liam Smith",
+      "designation": "Real Estate Agent",
+      "photoUrl": "https://i.ibb.co.com/59kYYjn/team-people-2.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Noah Miller",
+      "designation": "Property Consultant",
+      "photoUrl": "https://i.ibb.co.com/vx6QZV2/team-people-3.jpg"
+    },
+    {
+      "id": 8,
+      "name": "James Anderson",
+      "designation": "Operations Manager",
+      "photoUrl": "https://i.ibb.co.com/r3mRczN/team-people-4.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Elijah Thomas",
+      "designation": "Legal Advisor",
+      "photoUrl": "https://i.ibb.co.com/6B27xcp/team-people-9.jpg"
+    }
+  ]
+  

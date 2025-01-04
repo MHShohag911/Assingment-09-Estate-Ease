@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Navbar,
   MobileNav,
@@ -11,50 +11,65 @@ import {
   Avatar,
   Card,
   IconButton,
+  Tooltip,
 } from "@material-tailwind/react";
 import {
-  CubeTransparentIcon,
   UserCircleIcon,
-  CodeBracketSquareIcon,
   Square3Stack3DIcon,
   ChevronDownIcon,
   Cog6ToothIcon,
-  InboxArrowDownIcon,
-  LifebuoyIcon,
   PowerIcon,
   RocketLaunchIcon,
   Bars2Icon,
 } from "@heroicons/react/24/solid";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 // profile menu component
-const profileMenuItems = [
-  {
-    label: "My Profile",
-    icon: UserCircleIcon,
-  },
-  {
-    label: "Edit Profile",
-    icon: Cog6ToothIcon,
-  },
-  {
-    label: "Inbox",
-    icon: InboxArrowDownIcon,
-  },
-  {
-    label: "Help",
-    icon: LifebuoyIcon,
-  },
-  {
-    label: "Sign Out",
-    icon: PowerIcon,
-  },
-];
+
 
 function ProfileMenu() {
+  const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
   const closeMenu = () => setIsMenuOpen(false);
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    logOut()
+    .then((result) => console.log(result))
+    .catch()
+  }
+
+  const profileMenuItems = [
+    {
+      label: `${user? user?.displayName : 'My Profile'}`,
+      icon: UserCircleIcon,
+      onClick: ()=>{
+        navigate('/userProfile')
+      }
+    },
+    {
+      label: "Edit Profile",
+      icon: Cog6ToothIcon,
+      onClick: ()=>{
+        navigate('/updateProfile')
+      }
+    },
+    user?{
+      label: 'Log Out',
+      icon: PowerIcon,
+      onClick: ()=>{
+        handleSignOut()
+      }
+    }:{
+      label: 'Log In',
+      icon: PowerIcon,
+      onClick: ()=>{
+        navigate('/login')
+      }
+    }
+  ];
+
 
   return (
     <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end ">
@@ -64,13 +79,25 @@ function ProfileMenu() {
           color="blue-gray"
           className="flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto"
         >
-          <Avatar
-            variant="circular"
-            size="sm"
-            alt="tania andrew"
-            className="border border-gray-900 p-0.5"
-            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-          />
+          {user ? (
+            <Tooltip className="bg-opacity-50" content={user.displayName}>
+              <Avatar
+              variant="circular"
+              size="lg"
+              alt={user.displayName}
+              className="border border-gray-900 p-0.5"
+              src={user.photoURL}
+            />
+            </Tooltip>
+          ) : (
+            <Avatar
+              variant="circular"
+              size="lg"
+              alt="tania andrew"
+              className="border border-gray-900 p-0.5"
+              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+            />
+          )}
           <ChevronDownIcon
             strokeWidth={2.5}
             className={`h-3 w-3 transition-transform ${
@@ -80,12 +107,15 @@ function ProfileMenu() {
         </Button>
       </MenuHandler>
       <MenuList className="p-1">
-        {profileMenuItems.map(({ label, icon }, key) => {
+        {profileMenuItems.map(({ label, icon, onClick }, key) => {
           const isLastItem = key === profileMenuItems.length - 1;
           return (
-            <MenuItem
+              <MenuItem
               key={label}
-              onClick={closeMenu}
+              onClick={()=>{
+                closeMenu();
+                onClick();
+              }}
               className={`flex items-center gap-2 rounded ${
                 isLastItem
                   ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
@@ -126,6 +156,18 @@ const navListMenuItems = [
     title: "User Profile",
     href: "/userProfile",
   },
+  {
+    title: "Contact",
+    href: "/contact",
+  },
+  {
+    title: "Login",
+    href: "/login",
+  },
+  {
+    title: "Register",
+    href: "/register",
+  },
 ];
 
 function NavListMenu() {
@@ -134,7 +176,7 @@ function NavListMenu() {
   const renderItems = navListMenuItems.map(({ title, href }) => (
     <NavLink to={href} key={title}>
       <MenuItem className="h-auto w-full">
-        <Typography variant="h6" className="mb-1 text-[#FF0000]">
+        <Typography variant="h6" className="mb-1 text-primary">
           {title}
         </Typography>
       </MenuItem>
@@ -181,7 +223,7 @@ function NavListHeaderMenu() {
   const renderItems = navListMenuItems.map(({ title, href }) => (
     <NavLink to={href}>
       <MenuItem className="h-full w-full">
-        <Typography variant="h6" color="" className="text-[#FF0000]">
+        <Typography variant="h6" color="" className="text-primary">
           {title}
         </Typography>
       </MenuItem>
@@ -193,7 +235,9 @@ function NavListHeaderMenu() {
       <Menu>
         <MenuHandler>
           <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex hover:rounded-none hover:bg-white">
-            <ul className="col-span-4 flex w-full justify-center gap-1">{renderItems}</ul>
+            <ul className="col-span-4 flex w-full justify-center gap-1">
+              {renderItems}
+            </ul>
           </MenuItem>
         </MenuHandler>
       </Menu>
@@ -211,6 +255,13 @@ function NavList() {
 
 export function ComplexNavbar() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut()
+    .then((result) => console.log(result))
+    .catch()
+  }
 
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
 
@@ -249,12 +300,23 @@ export function ComplexNavbar() {
           <div className="flex-grow">
             <NavListHeaderMenu></NavListHeaderMenu>
           </div>
-          <Button
-            className="btn hover:bg-[#FF0000] hover:text-white text-[#FF0000] font-extrabold mr-2 hidden md:flex items-center"
-            variant="text"
-          >
-            log in
-          </Button>
+          {user ? (
+              <Button onClick={handleSignOut}
+              className="btn hover:bg-primary hover:text-white text-primary font-extrabold mr-2 hidden md:flex items-center"
+              variant="text"
+            >
+              log out
+            </Button>
+          ) : (
+            <Link className="hidden md:flex items-center" to="/login">
+              <Button
+              className="btn hover:bg-primary hover:text-white text-primary font-extrabold mr-2 "
+              variant="text"
+            >
+              log in
+            </Button>
+            </Link>
+          )}
         </div>
         <ProfileMenu />
       </div>

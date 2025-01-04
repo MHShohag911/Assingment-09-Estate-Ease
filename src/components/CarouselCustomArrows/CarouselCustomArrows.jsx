@@ -1,30 +1,34 @@
-import { Carousel, IconButton, Spinner } from "@material-tailwind/react";
+import { Carousel, IconButton } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
-import './CarouselCustomArrows.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init({
+    delay: 200,
+    duration: 1000,
+});
 
-export function CarouselCustomArrows({ theme, children, estate }) {
+export function CarouselCustomArrows({estate }) {
   const [propertyImage, setPropertyImage] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setPropertyImage(estate.view_property);
     console.log(estate.view_property);
-    setLoading(false);
   }, [estate]);
 
-  if (loading) {
-    return <Spinner className="h-12 w-12" />;
-  } else
     return (
       <Carousel 
+      data-aos="zoom-in-down"
         className="rounded-xl"
+        autoplay={true}
+        loop={true}
         prevArrow={({ handlePrev }) => (
           <IconButton
             variant="text"
             color="white"
             size="lg"
             onClick={handlePrev}
-            className="!absolute top-2/4 left-4 -translate-y-2/4 text-[#FF0000]"
+            className="!absolute top-2/4 left-4 -translate-y-2/4 text-primary"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +52,7 @@ export function CarouselCustomArrows({ theme, children, estate }) {
             color="white"
             size="lg"
             onClick={handleNext}
-            className="!absolute top-2/4 !right-4 -translate-y-2/4 text-[#FF0000]"
+            className="!absolute top-2/4 !right-4 -translate-y-2/4 text-primary"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -72,11 +76,12 @@ export function CarouselCustomArrows({ theme, children, estate }) {
                 <span
                   key={i}
                   className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-                    activeIndex === i ? "w-8 bg-[#FF0000]" : "w-4 bg-white/50"
+                    activeIndex === i ? "w-8 bg-primary" : "w-4 bg-white/50"
                   }`}
                   onClick={() => setActiveIndex(i)}
                 />
-              ))}
+              ))
+              }
             </div>
           )}
       >
