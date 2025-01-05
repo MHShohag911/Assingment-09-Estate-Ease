@@ -51,7 +51,7 @@ const Cards = ({ realEstate }) => {
     }, [realEstate])
 
   return (
-    <div className="mt-20">
+    <div className="mt-20 p-5">
       <h2 data-aos="flip-up" className="text-4xl text-center font-bold my-5">
         Choose Your Desired Property
       </h2>
