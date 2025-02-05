@@ -20,7 +20,7 @@ export function Register() {
   const [registerError, setRegisterError] = useState("");
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, signInWithGoogle, signInWithTwitter } = useContext(AuthContext);
+  const { createUser, signInWithGoogle, signInWithTwitter, signInWithFacebook } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -116,6 +116,32 @@ export function Register() {
       });
   };
   const handleTwitterSignIn = () => {
+    signInWithTwitter()
+      .then((result) => {
+        Swal.fire({
+          title: "Congrats!!!",
+          text: "Successfully Login to Your Account",
+          icon: "success",
+        });
+        if (result.user) {
+          navigate(location?.state ? location.state : "/");
+        }
+      })
+      .catch((error) => {
+        toast.error(error.message, {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      });
+  };
+  const handleFacebookSignIn = () => {
     signInWithTwitter()
       .then((result) => {
         Swal.fire({
@@ -251,6 +277,7 @@ export function Register() {
             <h2 className="uppercase text-center my-5">or login with</h2>
             <div className="flex  items-center justify-center gap-4">
               <Button
+                onClick={handleFacebookSignIn}
                 size="lg"
                 color="white"
                 className="flex items-center gap-3 rounded-full p-2"

@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Input, Textarea, Typography } from "@material-tailwind/react";
-import DynamicMap from "../../components/DynamicMap/DynamicMap";
 import ContactMap from "../../components/DynamicMap/ContactMap";
 
 export function Contact() {

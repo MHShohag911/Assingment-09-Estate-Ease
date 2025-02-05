@@ -102,7 +102,7 @@ const EstateDetails = () => {
           )}
         </div>
       </div>
-      <div data-aos="zoom-out-down" className="mt-10 p-5">
+      <div data-aos="fade-up" className="mt-10 p-5">
         <DynamicMap id={id}></DynamicMap>
       </div>
     </div>
